@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+</head>
+<body>
+    <h1>QR Code Generator</h1>
+    <label for="urlInput">Enter Reroute URL:</label>
+    <input type="text" id="urlInput" placeholder="https://example.com/reroute" required>
+    <button onclick="generateQRCode()">Generate QR Code</button>
+    <p id="message"></p>
+
+    <script>
+        async function generateQRCode() {
+            const rerouteURL = document.getElementById('urlInput').value;
+            const messageElement = document.getElementById('message');
+
+            // Check if the input is not empty
+            if (!rerouteURL) {
+                messageElement.innerText = "Please enter a URL to generate the QR code.";
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:5000/generate_qr', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ reroute_url: rerouteURL }),
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    messageElement.innerText = `QR code generated successfully. Filename: ${data.file}`;
+                } else {
+                    messageElement.innerText = `Error: ${data.error}`;
+                }
+            } catch (error) {
+                console.error("Request failed:", error);
+                messageElement.innerText = "Request failed. Check the server connection.";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+</head>
+<body>
+    <h1>QR Code Generator</h1>
+    <p id="message">Generating QR code...</p>
+
+    <script>
+        // URL to be sent to the Flask server
+        const predefinedURL = "https://www.youtube.com"; // Set your desired URL here
+
+        // Function to send the URL to the Flask server
+        async function generateQRCode() {
+            try {
+                const response = await fetch('http://localhost:5000/generate_qr', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ reroute_url: predefinedURL }),
+                });
+
+                const data = await response.json();
+                const messageElement = document.getElementById('message');
+                if (response.ok) {
+                    messageElement.innerText = `QR code generated successfully. Filename: ${data.file}`;
+                } else {
+                    messageElement.innerText = `Error: ${data.error}`;
+                }
+            } catch (error) {
+                console.error("Request failed:", error);
+                document.getElementById('message').innerText = "Request failed. Check the server connection.";
+            }
+        }
+
+        // Automatically trigger the QR code generation on page load
+        window.onload = generateQRCode;
+    </script>
+</body>
+</html>
