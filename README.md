@@ -12,7 +12,41 @@ The purpose of this project is to provide a software solution for rerouting in c
 **Demo Recordings:**  
 Throughout the development, we documented the building process. See the sections below to view how this project was created in stages, piece by piece, to illustrate our approach and the technical aspects of implementation.
 
+## Videos - "See How it Was Built"
+Each development stage was recorded to give insights into the build process and demonstrate the key technical components. Check out the video links below to explore the project creation step-by-step.
+
+* [Link to Video Part 1 - Initial Setup and Route Detection](https://streamyard.com/ijsj26h755re)
+* [Link to Video Part 2 - User Prompt and Confirmation](https://streamyard.com/wvrwcfbpvs9j)
+* [Link to Video Part 3 - Final Integration and Testing](https://streamyard.com/2af8areinib6)
+
 ---
+
+## Features and Functionality
+- Detects when a reroute is required based on predetermined conditions.
+- Prompts the user with an option to confirm the reroute.
+- Sends an updated route to passengers upon receiving confirmation from the head office.
+- Currently supports one route in this demo version.
+
+## Proving Efficiency
+
+Our solution aims to improve transit efficiency by:
+- Reducing delays through timely and accurate reroutes.
+- Facilitating swift decision-making by involving the head office in real time.
+- Enhancing passenger experience with immediate updates during critical events.
+
+## Built With
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+### Available Scripts
+
+In the project directory, you can run:
+
+- `npm start` - Starts the app in development mode.
+- `npm test` - Launches the test runner.
+- `npm run build` - Builds the app for production.
+
+---
+
 
 ## Installation and Setup
 
@@ -34,36 +68,6 @@ Throughout the development, we documented the building process. See the sections
    ```
    Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-## Features and Functionality
-- Detects when a reroute is required based on predetermined conditions.
-- Prompts the user with an option to confirm the reroute.
-- Sends an updated route to passengers upon receiving confirmation from the head office.
-- Currently supports one route in this demo version.
-
-## Videos - "See How it Was Built"
-Each development stage was recorded to give insights into the build process and demonstrate the key technical components. Check out the video links below to explore the project creation step-by-step.
-
-* [Link to Video Part 1 - Initial Setup and Route Detection](#)
-* [Link to Video Part 2 - User Prompt and Confirmation](#)
-* [Link to Video Part 3 - Final Integration and Testing](#)
-
-## Proving Efficiency
-
-Our solution aims to improve transit efficiency by:
-- Reducing delays through timely and accurate reroutes.
-- Facilitating swift decision-making by involving the head office in real time.
-- Enhancing passenger experience with immediate updates during critical events.
-
-## Built With
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-### Available Scripts
-
-In the project directory, you can run:
-
-- `npm start` - Starts the app in development mode.
-- `npm test` - Launches the test runner.
-- `npm run build` - Builds the app for production.
 
 ## Learn More
 
